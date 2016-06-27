@@ -1,0 +1,38 @@
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+a,
+a:link,
+a:visited {
+  color: $link-color;
+}
+
+a.active-menu-link,
+a:hover,
+a:focus,
+a:active {
+  color: $link-color-active;
+}
+
+#site-navigation {
+  background-color: $background-color-alt;
+  color: $text-color-alt;
+}
+
+a.active-menu-link {
+  // font-weight: bold;
+}
+
+.page-title {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: $title-color;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+input[type=search] {
+  box-shadow: none;
+}

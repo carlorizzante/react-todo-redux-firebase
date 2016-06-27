@@ -1,0 +1,13 @@
+// Remove styling from navigation
+.top-bar ul {
+  background: transparent !important;
+}
+
+// Blend text and link within the top-bar
+.top-bar .menu > li > a {
+  display: inline;
+}
+
+.top-bar-right > .menu > li > a {
+  padding-left: 0;
+}
