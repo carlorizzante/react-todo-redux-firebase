@@ -1471,7 +1471,7 @@
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\n\nvar React = __webpack_require__(8);\nvar TodoList = __webpack_require__(247);\n\nvar TodoApp = React.createClass({\n  displayName: \"TodoApp\",\n\n  getInitialState: function getInitialState() {\n    return {\n      todos: [{\n        id: 1,\n        text: \"Walk the dog\"\n      }, {\n        id: 2,\n        text: \"Water flowers\"\n      }, {\n        id: 3,\n        text: \"Go to the Moon\"\n      }, {\n        id: 4,\n        text: \"Ask funny questions\"\n      }]\n    };\n  },\n  render: function render() {\n    var todos = this.state.todos;\n\n    return React.createElement(TodoList, { todos: todos });\n  }\n});\n\nmodule.exports = TodoApp;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/TodoApp.jsx\n ** module id = 242\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/TodoApp.jsx?");
+	eval("\"use strict\";\n\nvar React = __webpack_require__(8);\nvar TodoList = __webpack_require__(247);\nvar AddTodo = __webpack_require__(250);\n\nvar TodoApp = React.createClass({\n  displayName: \"TodoApp\",\n\n  getInitialState: function getInitialState() {\n    return {\n      todos: [{\n        id: 1,\n        text: \"Walk the dog\"\n      }, {\n        id: 2,\n        text: \"Water flowers\"\n      }, {\n        id: 3,\n        text: \"Go to the Moon\"\n      }, {\n        id: 4,\n        text: \"Ask funny questions\"\n      }]\n    };\n  },\n  handleAddTodo: function handleAddTodo(text) {\n    alert(\"New todo: \" + text);\n  },\n  render: function render() {\n    var todos = this.state.todos;\n\n    return React.createElement(\n      \"div\",\n      null,\n      React.createElement(TodoList, { todos: todos }),\n      React.createElement(AddTodo, { onAddTodo: this.handleAddTodo })\n    );\n  }\n});\n\nmodule.exports = TodoApp;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/TodoApp.jsx\n ** module id = 242\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/TodoApp.jsx?");
 
 /***/ },
 /* 243 */
@@ -1508,6 +1508,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("\"use strict\";\n\nvar React = __webpack_require__(8);\n\nvar TodoItem = React.createClass({\n  displayName: \"TodoItem\",\n\n  render: function render() {\n    var _props = this.props;\n    var id = _props.id;\n    var text = _props.text;\n\n    return React.createElement(\n      \"div\",\n      null,\n      id,\n      \". \",\n      text\n    );\n  }\n});\n\nmodule.exports = TodoItem;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/TodoItem.jsx\n ** module id = 248\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/TodoItem.jsx?");
+
+/***/ },
+/* 249 */,
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("\"use strict\";\n\nvar React = __webpack_require__(8);\n\nvar AddTodo = React.createClass({\n  displayName: \"AddTodo\",\n\n  handleSubmit: function handleSubmit(e) {\n    e.preventDefault();\n    var todoText = this.refs.todoText.value;\n    if (todoText.length > 0) {\n      this.refs.todoText.value = null;\n      this.props.onAddTodo(todoText);\n    } else {\n      this.refs.todoText.focus();\n    }\n    // this.props.onNewTodo(todoText);\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      React.createElement(\n        \"form\",\n        { onSubmit: this.handleSubmit },\n        React.createElement(\"input\", { type: \"text\", ref: \"todoText\", placeholder: \"What else do you need to do?\" }),\n        React.createElement(\n          \"button\",\n          { className: \"button expanded\" },\n          \"Add New Todo\"\n        )\n      )\n    );\n  }\n});\n\nmodule.exports = AddTodo;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/AddTodo.jsx\n ** module id = 250\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/AddTodo.jsx?");
 
 /***/ }
 /******/ ]);
