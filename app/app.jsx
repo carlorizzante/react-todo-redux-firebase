@@ -1,9 +1,8 @@
 var React = require("react"),
     ReactDOM = require("react-dom");
 var {Router, Route, IndexRoute, hashHistory} = require("react-router");
-var Main = require("./components/Main");
-var About = require("./components/About");
-var Contact = require("./components/Contact");
+
+var TodoApp = require("TodoApp");
 
 // Wire up Foundation
 $(document).foundation();
@@ -12,11 +11,6 @@ $(document).foundation();
 require("style!css!sass!./style/app.scss");
 
 ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path="/" component={Main}>
-      <Route path="contact" component={Contact}/>
-      <IndexRoute component={About}/>
-    </Route>
-  </Router>,
-    document.getElementById("app")
+  <TodoApp />,
+  document.getElementById("app")
 );
