@@ -7,14 +7,16 @@ var TodoList = React.createClass({
     var renderTodos = () => {
       return todos.map((item) => {
         return (
-          <TodoItem key={item.id} {...item}/>
+          <li><TodoItem key={item.id} {...item}/></li>
         );
       });
     }
 
     return (
       <div>
-        {renderTodos()}
+        <ol>
+          {renderTodos()}
+        </ol>
       </div>
     );
   }
