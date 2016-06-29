@@ -8,9 +8,6 @@ var TodoSearch = React.createClass({
     // console.log(showCompleted);
     this.props.onSearch(showCompleted, searchText);
   },
-  // handleCheckbox: function () {
-  //   // console.log("check!");
-  // },
   render: function () {
     return (
       <div>
