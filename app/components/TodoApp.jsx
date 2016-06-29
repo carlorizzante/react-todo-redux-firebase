@@ -34,7 +34,6 @@ var TodoApp = React.createClass({
       todos: [
         ...this.state.todos,
         {
-          // id: this.state.todos.length + 1,
           id: uuid(),
           text: text
         }

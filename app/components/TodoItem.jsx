@@ -4,7 +4,7 @@ var TodoItem = React.createClass({
   render: function () {
     var {id, text} = this.props;
     return (
-      <div>{text}</div>
+      <li data-id={id}>{text}</li>
     );
   }
 });
