@@ -16,7 +16,7 @@ module.exports = {
     var todos = [];
 
     if (JSON.parse(stringTodos) === null) {
-      console.log("Hello there, no todos saved, let's make some new ones.");
+      // console.log("Hello there, no todos saved, let's make some new ones.");
       return [
         {
           id: uuid(),
@@ -52,8 +52,21 @@ module.exports = {
     });
 
     // Filter by searchText
+    filteredTodos = filteredTodos.filter((todo) => {
+        var text = todo.text.toLowerCase();
+        return searchText.length === 0 || text.indexOf(searchText) > - 1;
+    });
 
     // Sort todos with non-completed first
+    filteredTodos.sort((a, b) => {
+      if (!a.completed && b.completed) {
+        return - 1; // a.false && b.true
+      } else if (a.completed && !b.completed) {
+        return 1; // a.true && b.false
+      } else {
+        return 0;
+      }
+    });
 
     return filteredTodos;
   }
