@@ -41,5 +41,20 @@ module.exports = {
     // }
 
     return;
+  },
+  filterTodos: function (todos, showCompleted, searchText) {
+    var filteredTodos = todos;
+    // console.log(showCompleted, searchText);
+
+    // Filter by showCompleted
+    filteredTodos = filteredTodos.filter((todo) => {
+      return !todo.completed || showCompleted;
+    });
+
+    // Filter by searchText
+
+    // Sort todos with non-completed first
+
+    return filteredTodos;
   }
 }
