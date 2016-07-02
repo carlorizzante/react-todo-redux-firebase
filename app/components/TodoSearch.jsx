@@ -10,7 +10,7 @@ var TodoSearch = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <header className="header">
         <form>
           <div>
             <input type="text" ref="searchText" onChange={this.handleSearch} placeholder="Search todo..." />
@@ -22,7 +22,7 @@ var TodoSearch = React.createClass({
             </label>
           </div>
         </form>
-      </div>
+      </header>
     );
   }
 });

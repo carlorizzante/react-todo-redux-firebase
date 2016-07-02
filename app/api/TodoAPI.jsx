@@ -16,18 +16,18 @@ module.exports = {
     var stringTodos = localStorage.getItem("todos");
     var todos = [];
 
-    if (JSON.parse(stringTodos) === null) {
-      // console.log("Hello there, no todos saved, let's make some new ones.");
-      return [
-        {
-          id: uuid(),
-          text: "This is your first todo. Let's make some more!",
-          completed: false,
-          createdAt: moment().unix(),
-          completedAt: undefined
-        }
-      ]
-    }
+    // if (JSON.parse(stringTodos) === null) {
+    //   // console.log("Hello there, no todos saved, let's make some new ones.");
+    //   return [
+    //     {
+    //       id: uuid(),
+    //       text: "This is your first todo. Let's make some more!",
+    //       completed: false,
+    //       createdAt: moment().unix(),
+    //       completedAt: undefined
+    //     }
+    //   ]
+    // }
 
     try {
       todos = JSON.parse(stringTodos);

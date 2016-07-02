@@ -1,6 +1,25 @@
 body {
-  background-color: $background-color;
+  background-color: white;
   color: $text-color;
+}
+
+.container {
+  padding: 0;
+  margin-bottom: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $background-color;
+}
+
+header {
+  padding: 1rem;
+  border-bottom: 1px solid $border-color;
+}
+
+footer {
+  padding: 1rem;
+  padding-bottom: 0;
+  border-top: 1px solid $border-color;
 }
 
 a,
@@ -33,6 +52,56 @@ a.active-menu-link {
   text-transform: uppercase;
 }
 
-input[type=search] {
+input[type=search],
+input[type=text] {
   box-shadow: none;
+}
+
+.message {
+  margin: 1rem;
+  // text-align: center;
+  color: $text-color-inactive;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+}
+
+.todo {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $background-color-light;
+  }
+
+  p, input {
+    margin: 0;
+    padding: 0;
+  }
+
+  .todo-checkbox {
+    margin-right: 1rem;
+  }
+
+  .todo-meta {
+    font-size: 0.9rem;
+    color: $text-color-inactive;
+  }
+
+  &.todo-completed {
+    color: $text-color-inactive;
+    text-decoration: line-through;
+  }
 }
