@@ -1,5 +1,6 @@
 var $ = require("jquery");
-var uuid = require("node-uuid"); // TEMP
+var uuid = require("node-uuid");
+var moment = require("moment");
 
 module.exports = {
   setTodos: function (todos) {
@@ -21,7 +22,9 @@ module.exports = {
         {
           id: uuid(),
           text: "This is your first todo. Let's make some more!",
-          completed: false
+          completed: false,
+          createdAt: moment().unix(),
+          completedAt: undefined
         }
       ]
     }
