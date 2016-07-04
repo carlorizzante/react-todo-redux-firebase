@@ -28,9 +28,7 @@ module.exports = {
       "./app/api"
     ],
     alias: {
-      About: "app/components/About.jsx",
-      Contact: "app/components/Contact.jsx",
-      // openWeatherMap: "app/api/openWeatherMap.js" // Example API
+      actions: "app/actions/actions.jsx"
     },
     extensions: ["", ".js", ".jsx"]
   },
