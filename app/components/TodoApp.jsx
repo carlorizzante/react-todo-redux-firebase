@@ -4,7 +4,8 @@ var moment = require("moment");
 
 // var TodoList = require("TodoList");
 import TodoList from "TodoList";
-var TodoSearch = require("TodoSearch");
+// var TodoSearch = require("TodoSearch");
+import TodoSearch from "TodoSearch";
 // var AddTodo = require("AddTodo");
 import AddTodo from "AddTodo";
 var TodoAPI = require("TodoAPI");
@@ -73,7 +74,7 @@ var TodoApp = React.createClass({
     return (
       <div className="row">
         <div className="column small-centered small-11 medium-6 large-5">
-          <h1 className="page-title">Todo App</h1>
+          <h1 className="page-title">Todo App <small><i>with Redux</i></small></h1>
           <div className="container">
             <TodoSearch onSearch={this.handleSearch}/>
             <TodoList />
