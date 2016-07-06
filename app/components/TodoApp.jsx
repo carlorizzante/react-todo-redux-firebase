@@ -11,7 +11,7 @@ var TodoApp = React.createClass({
     return (
       <div className="row">
         <div className="column small-centered small-11 medium-6 large-5">
-          <h1 className="page-title">Todo App <small><i>with Redux</i></small></h1>
+          <h1 className="page-title">Todo App<br /><small className="small"><i>with Redux</i></small></h1>
           <div className="container">
             <TodoSearch/>
             <TodoList/>
