@@ -36,6 +36,44 @@ describe("Reducers", () => {
       expect(res[0].text).toBe(action.text);
     });
 
+    it("should add new todos to existing todos", () => {
+      var initial_todos = [{
+        id: 1,
+        text: "Hello",
+        compleated: false,
+        createdAt: 100,
+        completedAt: undefined
+      }, {
+        id: 2,
+        text: "World",
+        compleated: true,
+        createdAt: 200,
+        completedAt: 300
+      }];
+      var new_todos = [{
+        id: 3,
+        text: "Hello",
+        compleated: false,
+        createdAt: 100,
+        completedAt: undefined
+      }, {
+        id: 4,
+        text: "World",
+        compleated: true,
+        createdAt: 200,
+        completedAt: 300
+      }];
+      var action = {
+        type: "ADD_TODOS",
+        todos: new_todos
+      }
+      // console.log(initial_todos);
+      var res = reducers.todosReducer(df(initial_todos), df(action));
+      // console.log(res);
+      expect(res.length).toBe(4);
+      expect(res[2].id).toBe(3);
+    });
+
     // define todo array with realistic todo item
     // generate action
     // call reducer and assert completed flipped
@@ -68,7 +106,6 @@ describe("Reducers", () => {
       var res = reducers.todosReducer(todos, df(action));
       expect(res[0].completed).toBe(false);
       expect(res[0].completedAt).toBe(undefined);
-
     });
   });
 });

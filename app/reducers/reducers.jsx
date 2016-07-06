@@ -47,18 +47,26 @@ export var todosReducer = (state = [], action) => {
       });
       break;
 
-    case "TOGGLE_TODO_ANDREW":
-      return state.map((todo) => {
-        if (todo.id === action.id) {
-          var _completed = !todo.completed;
-          return {
-            ...todo,
-            completed: _completed,
-            completedAt: _completed ? moment().unix() : undefined
-          }
-        }
-      });
+    case "ADD_TODOS":
+      // return [
+      //   ...state,
+      //   action.todos
+      // ];
+      return state.concat(action.todos);
       break;
+
+    // case "TOGGLE_TODO_ANDREW":
+    //   return state.map((todo) => {
+    //     if (todo.id === action.id) {
+    //       var _completed = !todo.completed;
+    //       return {
+    //         ...todo,
+    //         completed: _completed,
+    //         completedAt: _completed ? moment().unix() : undefined
+    //       }
+    //     }
+    //   });
+    //   break;
 
     default:
       return state;
