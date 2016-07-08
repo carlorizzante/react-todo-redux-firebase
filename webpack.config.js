@@ -28,6 +28,7 @@ module.exports = {
       "./app/api"
     ],
     alias: {
+      app: "app", // Sets ./app as root for loading components and modules
       // applicationStyle: "app/style/app.scss",
       actions: "app/actions/actions.jsx",
       reducers: "app/reducers/reducers.jsx",
