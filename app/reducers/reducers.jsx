@@ -40,14 +40,25 @@ export var todosReducer = (state = [], action) => {
       ];
       break;
 
-    // add case for TOGGLE_TODO, completed equal to opposite value and update CompletedAt
-    case "TOGGLE_TODO":
+    // case "TOGGLE_TODO":
+    //   return state.map((todo) => {
+    //     if (todo.id === action.id) {
+    //         todo.completed = !todo.completed;
+    //         todo.completedAt = todo.completed ? moment().unix() : undefined;
+    //     }
+    //     return todo;
+    //   });
+    //   break;
+    case "UPDATE_TODO":
       return state.map((todo) => {
         if (todo.id === action.id) {
-            todo.completed = !todo.completed;
-            todo.completedAt = todo.completed ? moment().unix() : undefined;
+          return {
+            ...todo,
+            ...action.updates
+          }
+        } else {
+          return todo;
         }
-        return todo;
       });
       break;
 

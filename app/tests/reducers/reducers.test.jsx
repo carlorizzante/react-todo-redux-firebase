@@ -83,34 +83,33 @@ describe("Reducers", () => {
     // generate action
     // call reducer and assert completed flipped
     it("should toggle todo, flip completed and update completedAt", () => {
-      var action = {
-        type: "TOGGLE_TODO",
-        id: 1
-      }
       var todos = [{
         id: 1,
         text: "Hello",
         completed: false,
-        createdAt: 12345,
-        completedAt: undefined
+        createdAt: 12345
       }, {
         id: 2,
         text: "World",
         completed: false,
-        createdAt: 67890,
-        completedAt: undefined
+        createdAt: 67890
       }];
+      var updates = {
+        completed: true,
+        compleatedAt: 100000
+      }
+      var action = {
+        type: "UPDATE_TODO",
+        id: todos[0].id,
+        updates: updates
+      }
 
       var res = reducers.todosReducer(todos, df(action));
       expect(res.length).toBe(2);
-      expect(res[0].completed).toBe(true);
-      expect(res[0].completedAt).toNotBe(undefined);
+      expect(res[0].completed).toBe(updates.completed);
+      expect(res[0].completedAt).toEqual(updates.completedAt);
+      expect(res[0].text).toEqual(todos[0].text);
       expect(res[1].completed).toBe(false);
-      expect(res[1].completedAt).toBe(undefined);
-
-      var res = reducers.todosReducer(todos, df(action));
-      expect(res[0].completed).toBe(false);
-      expect(res[0].completedAt).toBe(undefined);
     });
   });
 });
